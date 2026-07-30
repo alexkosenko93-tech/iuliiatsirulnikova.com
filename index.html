@@ -36,6 +36,8 @@
             padding: 20px 10px;
             display: flex;
             justify-content: center;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
         }
 
         .container {
@@ -169,6 +171,31 @@
             background-color: var(--card-bg);
             border-radius: 14px;
             padding: 24px;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
+        .diploma-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 4px;
+        }
+
+        .diploma-link {
+            display: block;
+            color: var(--green-dark);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid var(--green-dark);
+            padding-bottom: 4px;
+            line-height: 1.5;
+        }
+
+        .diploma-link:hover,
+        .diploma-link:focus {
+            color: var(--green-accent);
+            border-color: var(--green-accent);
         }
 
         .card-title {
@@ -316,6 +343,25 @@
             content: "•";
             margin-left: 12px;
         }
+
+        @media (max-width: 480px) {
+            .main-grid {
+                padding: 20px;
+                gap: 18px;
+            }
+
+            .card {
+                padding: 18px;
+            }
+
+            .hero-content {
+                padding: 28px 20px;
+            }
+
+            .main-title {
+                font-size: 34px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -387,10 +433,12 @@
                 <!-- Diplomas -->
                 <div class="card">
                     <h2 class="card-title"><span>🎓</span> Мои дипломы</h2>
-                    <a href="Dip.jpg" target="_blank" rel="noopener noreferrer" style="display: inline-block; color: var(--green-dark); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--green-dark);">Магистрский диплом по психологии (МГППУ)</a>
-                    <a href="KBT.pdf" target="_blank" rel="noopener noreferrer" style="display: inline-block; color: var(--green-dark); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--green-dark);">Квалификационный диплом по когнитивно-поведенческой терапии первая ступень</a>
-                    <a href="KBT2.pdf" target="_blank" rel="noopener noreferrer" style="display: inline-block; color: var(--green-dark); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--green-dark);">Квалификационный диплом по когнитивно-поведенческой терапии вторая ступень</a>
-                    <a href="ART.pdf" target="_blank" rel="noopener noreferrer" style="display: inline-block; color: var(--green-dark); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--green-dark);">Квалификационный диплом по арт-терапии</a>                    
+                    <div class="diploma-list">
+                        <a href="Dip.jpg" target="_blank" rel="noopener noreferrer" class="diploma-link">Магистрский диплом по психологии (МГППУ)</a>
+                        <a href="KBT.pdf" target="_blank" rel="noopener noreferrer" class="diploma-link">Квалификационный диплом по когнитивно-поведенческой терапии первая ступень</a>
+                        <a href="KBT2.pdf" target="_blank" rel="noopener noreferrer" class="diploma-link">Квалификационный диплом по когнитивно-поведенческой терапии вторая ступень</a>
+                        <a href="ART.pdf" target="_blank" rel="noopener noreferrer" class="diploma-link">Квалификационный диплом по арт-терапии</a>
+                    </div>
                 </div>
 
                 <!-- Format -->
