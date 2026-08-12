@@ -335,6 +335,10 @@ body {
     color: var(--text-muted);
 }
 
+.video-top-card {
+    margin: 24px 30px;
+}
+
 .whatsapp .btn-icon { background-color: #25D366; }
 .telegram .btn-icon { background-color: #0088cc; }
 
