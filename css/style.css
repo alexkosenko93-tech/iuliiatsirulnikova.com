@@ -311,8 +311,28 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 16px;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.contact-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+    object-fit: contain;
+}
+
+.video-player {
+    width: 100%;
+    border-radius: 14px;
+    max-height: 420px;
+    background-color: #000;
+}
+
+.video-note {
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: var(--text-muted);
 }
 
 .whatsapp .btn-icon { background-color: #25D366; }
