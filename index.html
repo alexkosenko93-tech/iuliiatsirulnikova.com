@@ -16,362 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-page: #f2efe9;
-            --card-bg: #eae5dc;
-            --card-accent: #e5ddd0;
-            --text-main: #333333;
-            --text-muted: #666666;
-            --green-dark: #3f5542;
-            --green-accent: #2e7d32;
-            --gold-accent: #c49a45;
-            --white: #ffffff;
-            --font-title: 'Cormorant Garamond', serif;
-            --font-body: 'Montserrat', sans-serif;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background-color: var(--bg-page);
-            color: var(--text-main);
-            line-height: 1.5;
-            padding: 20px 10px;
-            display: flex;
-            justify-content: center;
-            -webkit-text-size-adjust: 100%;
-            text-size-adjust: 100%;
-        }
-
-        .container {
-            max-width: 900px;
-            width: 100%;
-            background: var(--bg-page);
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Hero Section */
-        .hero {
-            display: grid;
-            grid-template-columns: 1fr;
-            background-color: var(--bg-page);
-        }
-
-        @media (min-width: 768px) {
-            .hero {
-                grid-template-columns: 45% 55%;
-            }
-        }
-
-        .hero-image {
-            position: relative;
-            min-height: 380px;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .hero-content {
-            padding: 40px 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .subtitle-top {
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 14px;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .main-title {
-            font-family: var(--font-title);
-            font-size: 42px;
-            line-height: 1.1;
-            font-weight: 700;
-            color: var(--green-dark);
-            margin-bottom: 12px;
-        }
-
-        .methods-tag {
-            font-size: 15px;
-            color: var(--text-muted);
-            font-weight: 500;
-            margin-bottom: 24px;
-        }
-
-        .hero-description {
-            font-size: 15px;
-            color: var(--text-main);
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        /* Price Card */
-        .price-card {
-            background-color: var(--card-accent);
-            border-radius: 12px;
-            padding: 20px 24px;
-            text-align: center;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .price-card .type {
-            text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-        }
-
-        .price-card .amount {
-            font-family: var(--font-title);
-            font-size: 38px;
-            font-weight: 700;
-            color: #1a1a1a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
-
-        .price-card .values {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            margin-top: 8px;
-        }
-
-        /* Grid Section */
-        .main-grid {
-            padding: 30px;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 24px;
-        }
-
-        @media (min-width: 768px) {
-            .main-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 14px;
-            padding: 24px;
-            overflow-wrap: anywhere;
-            word-break: break-word;
-        }
-
-        .diploma-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 4px;
-        }
-
-        .diploma-link {
-            display: block;
-            color: var(--green-dark);
-            font-weight: 600;
-            text-decoration: none;
-            border-bottom: 1px solid var(--green-dark);
-            padding-bottom: 4px;
-            line-height: 1.5;
-        }
-
-        .diploma-link:hover,
-        .diploma-link:focus {
-            color: var(--green-accent);
-            border-color: var(--green-accent);
-        }
-
-        .card-title {
-            text-transform: uppercase;
-            font-size: 16px;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-            color: var(--green-dark);
-            margin-bottom: 18px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* Lists */
-        .info-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .info-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            font-size: 14px;
-        }
-
-        .info-list .icon {
-            font-size: 18px;
-            line-height: 1;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .check-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .check-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            font-size: 14px;
-        }
-
-        .check-icon {
-            width: 20px;
-            height: 20px;
-            background-color: var(--green-dark);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 11px;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        /* Highlight Box */
-        .highlight-box {
-            background-color: rgba(255,255,255,0.4);
-            border-radius: 10px;
-            padding: 12px 16px;
-            margin-top: 14px;
-            font-size: 13px;
-            display: flex;
-            gap: 10px;
-            align-items: flex-start;
-        }
-
-        /* Quote Banner */
-        .quote-banner {
-            grid-column: 1 / -1;
-            text-align: center;
-            font-family: var(--font-title);
-            font-style: italic;
-            font-size: 22px;
-            color: var(--green-dark);
-            padding: 10px 0;
-        }
-
-        /* Contact Section */
-        .contact-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 10px;
-        }
-
-        .contact-btn {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding: 12px 18px;
-            border-radius: 30px;
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 600;
-            font-size: 15px;
-            background-color: var(--white);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .contact-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        .btn-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 16px;
-        }
-
-        .whatsapp .btn-icon { background-color: #25D366; }
-        .telegram .btn-icon { background-color: #0088cc; }
-
-        /* Footer */
-        .footer-bar {
-            background-color: var(--green-dark);
-            color: var(--white);
-            text-align: center;
-            padding: 16px 20px;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .footer-bar span:not(:last-child)::after {
-            content: "•";
-            margin-left: 12px;
-        }
-
-        @media (max-width: 480px) {
-            .main-grid {
-                padding: 20px;
-                gap: 18px;
-            }
-
-            .card {
-                padding: 18px;
-            }
-
-            .hero-content {
-                padding: 28px 20px;
-            }
-
-            .main-title {
-                font-size: 34px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -381,7 +26,7 @@
         <section class="hero">
             <div class="hero-image">
                 <!-- Replace src with your main photo link -->
-                <img src="photo.jpg" alt="Психолог Юлия Цирульникова">
+                <img src="assets/photo.jpg" alt="Психолог Юлия Цирульникова">
             </div>
             <div class="hero-content">
                 <div class="subtitle-top">
@@ -405,7 +50,7 @@
         <div class="main-grid">
             
             <!-- Column 1: About & Format -->
-            <div style="display: flex; flex-direction: column; gap: 24px;">
+            <div class="column-stack">
                 
                 <!-- About Me -->
                 <div class="card">
@@ -434,7 +79,7 @@
                     </ul>
 
                     <div class="highlight-box">
-                        <span style="font-size: 16px;">🤍</span>
+                        <span class="highlight-icon">🤍</span>
                         <span>Есть опыт работы с адаптацией после переезда/эмиграции и последствиями травматических событий.</span>
                     </div>
                 </div>
@@ -443,11 +88,11 @@
                 <div class="card">
                     <h2 class="card-title"><span>🎓</span> Мои дипломы</h2>
                     <div class="diploma-list">
-                        <a href="Dip.jpg" target="_blank" rel="noopener noreferrer" class="diploma-link">Магистрский диплом по психологии (МГППУ)</a>
-                        <a href="KBT.pdf" target="_blank" rel="noopener noreferrer" class="diploma-link">Квалификационный диплом по когнитивно-поведенческой терапии первая ступень</a>
-                        <a href="KBT2_rotate.pdf" target="_blank" rel="noopener noreferrer" class="diploma-link">Квалификационный диплом по когнитивно-поведенческой терапии вторая ступень</a>
-                        <a href="ART_rotate.pdf" target="_blank" rel="noopener noreferrer" class="diploma-link">Квалификационный диплом по арт-терапии</a>
-                        <a href="Schema_therapy.jpg" target="_blank" rel="noopener noreferrer" class="diploma-link">Квалификационный диплом по схема-терапии</a>
+                        <a href="assets/Dip.jpg" target="_blank" rel="noopener noreferrer" class="diploma-link">Магистрский диплом по психологии (МГППУ)</a>
+                        <a href="assets/KBT.pdf" target="_blank" rel="noopener noreferrer" class="diploma-link">Квалификационный диплом по когнитивно-поведенческой терапии первая ступень</a>
+                        <a href="assets/KBT2_rotate.pdf" target="_blank" rel="noopener noreferrer" class="diploma-link">Квалификационный диплом по когнитивно-поведенческой терапии вторая ступень</a>
+                        <a href="assets/ART_rotate.pdf" target="_blank" rel="noopener noreferrer" class="diploma-link">Квалификационный диплом по арт-терапии</a>
+                        <a href="assets/Schema_therapy.jpg" target="_blank" rel="noopener noreferrer" class="diploma-link">Квалификационный диплом по схема-терапии</a>
                     </div>
                 </div>
 
@@ -459,14 +104,14 @@
                             <span class="icon">💻</span>
                             <div>
                                 <strong>ОНЛАЙН</strong><br>
-                                <span style="color: var(--text-muted);">по всему миру</span>
+                                <span class="muted-text">по всему миру</span>
                             </div>
                         </li>
                         <li>
                             <span class="icon">📍</span>
                             <div>
                                 <strong>ОЧНО</strong><br>
-                                <span style="color: var(--text-muted);">Ашдод и ближайшие города</span>
+                                <span class="muted-text">Ашдод и ближайшие города</span>
                             </div>
                         </li>
                     </ul>
@@ -475,7 +120,7 @@
             </div>
 
             <!-- Column 2: Focus Areas & Contacts -->
-            <div style="display: flex; flex-direction: column; gap: 24px;">
+            <div class="column-stack">
                 
                 <!-- Services / Topics -->
                 <div class="card">
@@ -494,7 +139,7 @@
                 <!-- Contacts -->
                 <div class="card">
                     <h2 class="card-title"><span>🌿</span> Для записи</h2>
-                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 14px;">Напишите мне в WhatsApp или Telegram</p>
+                    <p class="contact-text">Напишите мне в WhatsApp или Telegram</p>
                     
                     <div class="contact-list">
                         <a href="https://wa.me/79162520688" class="contact-btn whatsapp" target="_blank">
