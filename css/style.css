@@ -380,3 +380,42 @@ body {
         font-size: 34px;
     }
 }
+
+/* Language Switch */
+.lang-switch {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    padding: 12px 16px 0;
+}
+
+.lang-switch a {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+}
+
+.lang-switch a:hover,
+.lang-switch a:focus {
+    color: var(--green-dark);
+    border-color: var(--green-dark);
+}
+
+.lang-switch a.active {
+    background-color: var(--green-dark);
+    color: var(--white);
+}
+
+.price-card .amount {
+    flex-wrap: wrap;
+}
+
+.price-card .amount-sep {
+    color: var(--text-muted);
+    font-weight: 500;
+}
